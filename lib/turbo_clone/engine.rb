@@ -3,6 +3,7 @@ module TurboClone
     isolate_namespace TurboClone
 
     # Load helpers into the main app
+    # "turbo.helper" is just a name
     initializer "turbo.helper" do
       # When action_controller_base is loaded, load the helpers
       ActiveSupport.on_load :action_controller_base do
