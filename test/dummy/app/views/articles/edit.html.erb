@@ -1,5 +1,6 @@
 <h1>Edit article</h1>
 
 <%= link_to "Back", articles_path %>
-
-<%= render "articles/form", article: @article %>
+<%= turbo_frame_tag @article do%>
+  <%= render "articles/form", article: @article %>
+<% end %>
