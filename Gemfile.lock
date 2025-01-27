@@ -178,6 +178,7 @@ GEM
     rake (13.2.1)
     rdoc (6.10.0)
       psych (>= 4.0.0)
+    redis (4.8.1)
     reline (0.6.0)
       io-console (~> 0.5)
     securerandom (0.3.2)
@@ -203,10 +204,12 @@ GEM
 
 PLATFORMS
   arm64-darwin-22
+  arm64-darwin-23
 
 DEPENDENCIES
   importmap-rails
   puma
+  redis
   sprockets-rails
   sqlite3
   turbo_clone!
