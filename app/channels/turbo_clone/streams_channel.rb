@@ -1,5 +1,5 @@
 class TurboClone::StreamsChannel < ActionCable::Channel::Base
-  extend TurboClone::Streams::StreamName
+  extend TurboClone::Streams::StreamName, TurboClone::Streams::Broadcasts
 
   def subscribed
     # <turbo-cable-stream-source channel="TurboClone::StreamsChannel" signed-stream-name='articles'>
