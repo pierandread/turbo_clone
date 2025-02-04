@@ -13,3 +13,8 @@ gem "puma"
 gem "importmap-rails"
 
 gem "redis"
+
+group :development, :test do
+  gem 'pry', '~> 0.15.0'
+  gem 'pry-byebug'
+end
