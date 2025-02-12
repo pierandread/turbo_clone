@@ -4,6 +4,15 @@ module TurboClone
   class Engine < ::Rails::Engine
     isolate_namespace TurboClone
 
+    # Hash without bracket (a la js)
+    config.turbo = ActiveSupport::OrderedOptions.new
+
+    initializer 'turbo.signed_stream_verifier_key' do
+      TurboClone.signed_stream_verifier_key = config.turbo.signed_stream_verifier_key ||
+        # string arg can be anything
+        Rails.application.key_generator.generate_key("turbo/signed_stream_verifier_key")
+    end
+
     # https://edgeapi.rubyonrails.org/classes/ActionController/MimeResponds.html
     initializer "turbo.media_type" do
       Mime::Type.register "text/vnd.turbo-stream.html", :turbo_stream
