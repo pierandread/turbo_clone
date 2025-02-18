@@ -1,7 +1,7 @@
 module TurboClone::Streams::StreamName
   def verified_stream_name(signed_stream_name)
     # nil if not from .generate
-    # and return the original stream name
+    # otherwise return the original stream name
     TurboClone.signed_stream_verifier.verified signed_stream_name
   end
 
